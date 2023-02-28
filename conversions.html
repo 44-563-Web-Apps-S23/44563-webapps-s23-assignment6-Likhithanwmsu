@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> Conversion file </title>
+ </head>
+<body>
+<h1> Likhitha Maheswari Chebrolu shows currency conversions</h1>
+<h2>Getting input</h2>
+<form>
+    <label for="form1_age">Enter base amount</label>
+    <input type ="number" id="baseval" name="form1_age" value=50> <br>
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="convVal" name="form1_age" value=35> <br>
+    <input type="button" class="btn btn-primary" onclick="convert()" value="Show conversions">
+</form>
+<p id="result">This text will be replaced </p>
+<script> 
+var toShow='';
+var outstr='';
+function convert(){
+    toShow='';
+var base=document.getElementById("baseval").value;
+var conv=document.getElementById("convVal").value;
+var base1=base;
+for (let i = 1; i <=5; i++) {
+    console.log(2**i);   
+    toShow=toShow+base+' is '+Math.round(base*conv * 100) / 100+'; ';
+    base=base1*(2**i);   
+}
+document.getElementById("result").innerHTML='Conversions are: '+toShow;
+}    
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+</body>
+</html> 
