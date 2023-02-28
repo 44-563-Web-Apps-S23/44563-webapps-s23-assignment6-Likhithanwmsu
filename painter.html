@@ -42,7 +42,12 @@
                 alert("Sorry")
                 out.innerHTML = "Correct Answer: " + good + " Incorrect Answer: " + oops;
             }
+            document.getElementById("result").innerHTML='Correct Count :' +good+'.<br> Incorrect Count :' +oops+'.';
+        if(counter>10){
+        document.getElementById("result").innerHTML='Sorry, ran out of guesses.';
+        document.getElementById('togglee').style.visibility = 'hidden';
         }
+    }
         function selectImage(){
   
   switch(useImage){
