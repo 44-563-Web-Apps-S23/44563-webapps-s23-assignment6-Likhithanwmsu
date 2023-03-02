@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
     <title>Responsive Assignment</title>
 </head>
@@ -17,7 +17,7 @@
                 <label for="painter">Guess the painter</label>
                 <input type="text" class="form-control" id="painter" name="painter" placeholder="Guess the painter"><br>
             </div>
-            <input type="button" onclick="checkPainter()" value="Check the Guess">
+            <input type="button" class="btn btn-primary" onclick="checkPainter()" value="Check the Guess">
         </form>
         <p id="result">This text will be replaced </p></div>
         <div class="container">
@@ -27,6 +27,7 @@
         var good = 0;
         var oops = 0;
         var useImage=1;
+        var counter=0;
         function checkPainter() {
             console.log("Getting form values")
             hiddenpainter = document.getElementById("paintername").value;
@@ -44,6 +45,7 @@
             }
             document.getElementById("result").innerHTML='Correct Count :' +good+'.<br> Incorrect Count :' +oops+'.';
         if(counter>10){
+            alert("Sorry, ran out of guesses.");
         document.getElementById("result").innerHTML='Sorry, ran out of guesses.';
         document.getElementById('togglee').style.visibility = 'hidden';
         }
